@@ -28,4 +28,4 @@ $ python -m statseg --infile prion.fasta --outfile prion.masked.fasta
 
 ## Documentation
 
-StatSEG exposes an easy to use API and a CLI for quick console access. More in-depth documentation on both these systems exist in this repos Sphinx Documentation. 
+API & CLI documentation is [available here](http://cs.mcgill.ca/~jszymb/statseg/). An explanatory blog post is [available here](https://jszym.com/blog/quick-n-dirty-protein-dna-low-complexity-masking-implementation.html).
