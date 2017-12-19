@@ -1,0 +1,155 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>API Documentation &#8212; StatSEG 1.0 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '1.0',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true,
+        SOURCELINK_SUFFIX: '.txt'
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head>
+  <body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-statseg">
+<span id="api-documentation"></span><h1>API Documentation<a class="headerlink" href="#module-statseg" title="Permalink to this headline">¶</a></h1>
+<dl class="function">
+<dt id="statseg.complexity">
+<code class="descclassname">statseg.</code><code class="descname">complexity</code><span class="sig-paren">(</span><em>sequence</em>, <em>N</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/statseg.html#complexity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#statseg.complexity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the Shannon Entropy of a given sequence of a
+biopolymer with <cite>N</cite> possible residues. See (Wooton, 1993)
+for more.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sequence</strong> – the nucleotide or protein sequence whose Shannon Entropy is to calculated.</li>
+<li><strong>N</strong> – the total number of possible residues in the biopolymer <cite>sequence</cite> belongs to.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="statseg.compute_rep_vector">
+<code class="descclassname">statseg.</code><code class="descname">compute_rep_vector</code><span class="sig-paren">(</span><em>sequence</em>, <em>N</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/statseg.html#compute_rep_vector"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#statseg.compute_rep_vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Computes the repetition vector (as seen in Wooton, 1993) from a
+given sequence of a biopolymer with <cite>N</cite> possible residues.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>sequence</strong> – the nucleotide or protein sequence to generate a repetition vector for.</li>
+<li><strong>N</strong> – the total number of possible residues in the biopolymer <cite>sequence</cite> belongs to.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="statseg.mask_low_complexity">
+<code class="descclassname">statseg.</code><code class="descname">mask_low_complexity</code><span class="sig-paren">(</span><em>seq_rec</em>, <em>maskchar='x'</em>, <em>N=20</em>, <em>L=12</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/statseg.html#mask_low_complexity"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#statseg.mask_low_complexity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Masks low-complexity nucleic/amino acid sequences with
+a given mask character.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>seq_rec</strong> – a Biopython Sequence Record</li>
+<li><strong>maskchar</strong> – Character to mask low-complexity residues with.</li>
+<li><strong>N</strong> – Number of residues to expect in the sequence. (20 for AA, 4 for DNA)</li>
+<li><strong>L</strong> – Length of sliding window that reads the sequence.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="statseg.overlapping_windows">
+<code class="descclassname">statseg.</code><code class="descname">overlapping_windows</code><span class="sig-paren">(</span><em>sequence</em>, <em>L</em><span class="sig-paren">)</span><a class="reference internal" href="_modules/statseg.html#overlapping_windows"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#statseg.overlapping_windows" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns overlapping windows of size <cite>L</cite> from sequence <cite>sequence</cite>
+:param sequence: the nucleotide or protein sequence to scan over
+:param L: the length of the windows to yield</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <div><input type="text" name="q" /></div>
+      <div><input type="submit" value="Go" /></div>
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2017, Joseph Szymborski.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.5</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.10</a>
+      
+      |
+      <a href="_sources/api.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
