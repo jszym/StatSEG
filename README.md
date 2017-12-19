@@ -28,4 +28,4 @@ $ python -m statseg --infile prion.fasta --outfile prion.masked.fasta
 
 ## Documentation
 
-API & CLI documentation is [available here](http://cs.mcgill.ca/~jszymb/statseg/index.html). An explanatory blog post is [available here](https://jszym.com/blog/quick-n-dirty-protein-dna-low-complexity-masking-implementation.html).
+API & CLI documentation is [available here](http://bit.ly/2BbgtNt). An explanatory blog post is [available here](https://jszym.com/blog/quick-n-dirty-protein-dna-low-complexity-masking-implementation.html).
